@@ -13,7 +13,10 @@ Expects the following modules to exist in the same folder (from your earlier day
 """
  
 from multiprocessing import process
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 import tempfile
  
 import streamlit as st
@@ -30,7 +33,7 @@ from Day4_Vector_Store import load_chunk, load_embeddings, build_faiss, save_ind
 # deployed app will use this same key — they won't need to enter one.
 # Get a key at: https://aistudio.google.com/app/apikey
 # -----------------------------------------------------------------------
-GEMINI_API_KEY = process.env.get("API_KEY")  
+GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
  
 genai.configure(api_key=GEMINI_API_KEY)
  
