@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+
+sample.pdf
+
+extracted_text.txt
+Chunks.pkl
+Embeddings.npy
+faiss_index.pkl
+chunks_texts.pkl
