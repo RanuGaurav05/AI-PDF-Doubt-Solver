@@ -12,10 +12,11 @@ from Day4_Vector_Store import load_chunk, load_embeddings, build_faiss, save_ind
 from sentence_transformers import SentenceTransformer
 import faiss
 import os
+import streamlit as st
 
 #-------------------------------------------#-------------------------------------#
 import google.generativeai as genai
-genai.configure(api_key=process.env.get("API_KEY"))
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 #-------------------------------------------#-------------------------------------#
 
 model = SentenceTransformer('all-MiniLM-L6-v2')

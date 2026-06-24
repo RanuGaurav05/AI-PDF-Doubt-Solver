@@ -13,12 +13,18 @@ Expects the following modules to exist in the same folder (from your earlier day
 """
  
 from multiprocessing import process
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
+import os
 import tempfile
- 
+
+import streamlit as st
+import google.generativeai as genai
+
+genai.configure(
+    api_key=st.secrets["GOOGLE_API_KEY"]
+)
+
+
 import streamlit as st
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
